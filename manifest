@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "LockForce Security Suite",
+  "version": "1.0.5",
+  "description": "LockForce Security Suite v1.0 (Stable) — local-only threat protection, redirect firewall, download guard, and the LockForce Vault password manager. Zero servers. Zero tracking.",
+  "permissions": [
+    "storage",
+    "downloads",
+    "notifications",
+    "alarms",
+    "activeTab",
+    "scripting",
+    "webNavigation",
+    "tabs"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

@@ -1,0 +1,57 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  background: #0b1220;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0b1220; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+
+/* Feature catalog */
+.lf-cat-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.lf-cat-tab {
+  padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: 600;
+  color: #94a3b8; background: rgba(30, 41, 59, 0.5); border: 1px solid #334155;
+  cursor: pointer; transition: background 0.15s, color 0.15s;
+}
+.lf-cat-tab:hover { background: #1e293b; color: #e2e8f0; }
+.lf-cat-tab-active { background: rgba(16, 185, 129, 0.15); border-color: #059669; color: #6ee7b7; }
+
+.lf-feature-list { display: flex; flex-direction: column; gap: 8px; }
+.lf-feature-row {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 12px 14px; border-radius: 12px;
+  background: rgba(30, 41, 59, 0.4); border: 1px solid #334155;
+}
+.lf-feature-on { background: rgba(16, 185, 129, 0.05); border-color: rgba(6, 78, 59, 0.5); }
+.lf-feature-toggle { flex-shrink: 0; padding-top: 2px; }
+.lf-feature-body { flex: 1; min-width: 0; }
+.lf-feature-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.lf-feature-name { font-size: 13px; font-weight: 700; color: #e2e8f0; margin: 0; }
+.lf-feature-desc { font-size: 11px; color: #94a3b8; margin: 4px 0 0; line-height: 1.5; }
+.lf-feature-cat { font-size: 10px; color: #475569; text-transform: uppercase; letter-spacing: 0.08em; margin: 6px 0 0; font-weight: 700; }
+.lf-cws-badge {
+  flex-shrink: 0; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+  padding: 3px 8px; border-radius: 999px;
+  color: #6ee7b7; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(5, 150, 105, 0.5);
+}
+.lf-feature-note { font-size: 10px; color: #64748b; margin-top: 10px; }
